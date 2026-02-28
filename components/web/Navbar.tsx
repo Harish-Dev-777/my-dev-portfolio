@@ -63,7 +63,7 @@ const Navbar = () => {
   return (
     <>
       {/* ── Fixed Trigger Bar ───────────────────────────────────── */}
-      <header className="fixed top-0 left-0 w-full z-400 transition-colors duration-500 flex items-center justify-between pointer-events-none">
+      <header className="fixed top-0 left-0 w-full z-500 transition-colors duration-500 flex items-center justify-between pointer-events-none">
         <div className="pointer-events-auto">
           <button
             onClick={() => navigate("section-about")}
