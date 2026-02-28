@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import SceneCanvas from "@/components/web/backgrounds/SceneCanvas";
+import VideoBackground from "@/components/web/backgrounds/VideoBackground";
 import Preloader from "@/components/web/ux/Preloader";
 
 const satoshi = localFont({
@@ -99,30 +101,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${satoshi.variable} ${manrope.variable}`}>
-        <script
+        {/* Spline viewer loaded after page becomes interactive */}
+        <Script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.12.58/build/spline-viewer.js"
-        ></script>
+          strategy="lazyOnload"
+        />
 
         {/* ── Premium Preloader (z-index: 999) ── */}
         <Preloader />
 
-        {/* ── Fixed Video Background sitting below everything ── */}
-        <div className="fixed inset-0 z-[-1] overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover grayscale opacity-50 transition-opacity duration-1000"
-          >
-            <source
-              src="/bg-scenes/Penguin_walks_alone_toward_mountain.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="absolute inset-0 bg-black/25" />
-        </div>
+        {/* ── Fixed Video Background: sequential playback ── */}
+        <VideoBackground />
 
         {/* ── Cinematic scroll-driven background (z-index: 0) ── */}
         <SceneCanvas />
@@ -133,7 +123,7 @@ export default function RootLayout({
           className="fixed inset-0 z-1 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(8,9,12,0.55) 0%, rgba(8,9,12,0.15) 40%, rgba(8,9,12,0.15) 60%, rgba(8,9,12,0.65) 100%)",
+              "linear-gradient(to bottom, rgba(8,9,12,0.6) 0%, rgba(8,9,12,0.1) 40%, rgba(8,9,12,0.1) 60%, rgba(8,9,12,0.7) 100%)",
           }}
         />
         {/* ── Page content sits above background ── */}

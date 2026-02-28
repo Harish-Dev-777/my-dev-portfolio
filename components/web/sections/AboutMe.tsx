@@ -137,7 +137,7 @@ export default function AboutMeSection() {
                   src="/MyImage.jpeg"
                   alt="Harish - Web Developer"
                   fill
-                  className="object-cover object-top" // object-top helps keep the head visible if cropped
+                  className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
@@ -145,16 +145,15 @@ export default function AboutMeSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-bg/80 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating Title (overlaps the image dramatically) */}
+              {/* Floating Title — safe offsets on mobile */}
               <div
                 ref={(el) => {
                   textRefs.current[1] = el;
                 }}
-                className="absolute -bottom-8 lg:-bottom-12 -left-4 lg:-left-16 z-10 pointer-events-none drop-shadow-2xl"
+                className="absolute -bottom-6 left-0 lg:-bottom-12 lg:-left-10 z-10 pointer-events-none drop-shadow-2xl"
               >
-                {/* Removed mix-blend-difference as it fails if both are bright white. Added dramatic shadow instead. */}
-                <h3 className="font-display font-medium text-[clamp(60px,10vw,140px)] leading-[0.85] tracking-tighter text-text drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
-                  I'm Harish.
+                <h3 className="font-display font-medium text-[clamp(48px,10vw,140px)] leading-[0.85] tracking-tighter text-text drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
+                  I&apos;m Harish.
                 </h3>
                 <p className="text-body-large text-accent mt-4 ml-2 max-w-sm drop-shadow-md bg-bg/50 inline-block px-4 py-1 rounded-full backdrop-blur-sm">
                   Web developer

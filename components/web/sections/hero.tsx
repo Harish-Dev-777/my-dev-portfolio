@@ -67,7 +67,7 @@ Before the success.`;
     <section
       id="section-home"
       ref={heroRef}
-      className="section relative flex flex-col justify-center pt-28 min-h-screen overflow-hidden"
+      className="section relative flex flex-col justify-center pt-24 sm:pt-28 min-h-screen overflow-hidden"
     >
       <div className="relative z-10">
         <h1

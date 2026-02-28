@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 const SCENES = 4;
 const FRAMES_PER_SCENE = 40;
 const TOTAL_FRAMES = SCENES * FRAMES_PER_SCENE;
-const IMAGE_SCALE = 1.06;
 
 function buildFramePaths(): string[] {
   const paths: string[] = [];
@@ -97,9 +96,13 @@ export default function SceneCanvas() {
         sx = (img.naturalWidth - sw) / 2;
       }
 
-      // Zoom in by IMAGE_SCALE to hide edge artifacts
-      const scaledSw = sw / IMAGE_SCALE;
-      const scaledSh = sh / IMAGE_SCALE;
+      // Dynamic scale factor to crop out baked-in black letterboxing bars
+      // Mobile needs a significantly higher scale because the sides are cropped
+      // leaving top/bottom black bars very visible.
+      const scaleFactor = displayW < 768 ? 1.45 : 1.15;
+
+      const scaledSw = sw / scaleFactor;
+      const scaledSh = sh / scaleFactor;
       const scaledSx = sx + (sw - scaledSw) / 2;
       const scaledSy = sy + (sh - scaledSh) / 2;
 

@@ -2,13 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import {
-  ArrowUpRight,
-  Linkedin,
-  Github,
-  Instagram,
-  MessageCircle,
-} from "lucide-react";
+import { Linkedin, Github, Instagram, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 const EMAIL = "harishmkdev@gmail.com";
@@ -76,7 +70,7 @@ const ContactSection = () => {
     >
       <div className="w-full flex flex-col lg:flex-row items-stretch justify-center gap-20 lg:gap-0 px-6 sm:px-12 lg:px-0">
         {/* ── Left Column: Connect (50%) ─────────────────────────── */}
-        <div className="flex-1 lg:flex-basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0 border-b lg:border-b-0 lg:border-r border-white/5">
+        <div className="flex-1 lg:basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0 border-b lg:border-b-0 lg:border-r border-white/5">
           <div className="flex flex-col gap-12 items-center">
             <motion.div style={{ y: headingY, opacity: headingOpacity }}>
               <h2
@@ -130,7 +124,7 @@ const ContactSection = () => {
         </div>
 
         {/* ── Right Column: Socials (50%) ────────────────────────── */}
-        <div className="flex-1 lg:flex-basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0">
+        <div className="flex-1 lg:basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0">
           <div className="flex flex-col gap-10">
             {SOCIAL_LINKS.map((link) => (
               <Link

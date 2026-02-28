@@ -86,7 +86,7 @@ export function ClimbSection() {
     >
       <div className="w-full h-full flex flex-col lg:flex-row items-stretch justify-center px-6 sm:px-12 lg:px-0">
         {/* ── Left Half: Display Quote (50%) ─────────────────────── */}
-        <div className="flex-1 lg:flex-basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0 lg:border-r border-white/5">
+        <div className="flex-1 lg:basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0 lg:border-r border-white/5">
           <div className="flex flex-col gap-10 max-w-[600px]">
             <h2
               ref={headingRef}
@@ -113,7 +113,7 @@ export function ClimbSection() {
         </div>
 
         {/* ── Right Half: Procedural List (50%) ───────────────────── */}
-        <div className="flex-1 lg:flex-basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0">
+        <div className="flex-1 lg:basis-1/2 flex flex-col items-center justify-center text-center py-20 lg:py-0">
           <div className="flex flex-col gap-12 max-w-[500px]">
             {/* Numbered Procedural List */}
             <ul className="flex flex-col gap-10">

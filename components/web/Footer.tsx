@@ -72,7 +72,7 @@ const Footer = () => {
 
         {/* ── Center Column: Nav & Copyright ────────────────── */}
         <div className="flex flex-col items-center justify-center h-full gap-16 order-first lg:order-0">
-          <nav className="flex flex-col items-center gap-6">
+          <nav className="flex flex-col items-center justify-center gap-6 ">
             {["Home", "Projects", "Skills", "About"].map((item) => (
               <button
                 key={item}
@@ -93,9 +93,7 @@ const Footer = () => {
             <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/10">
               © {new Date().getFullYear()} — All Rights Reserved
             </span>
-            <span className="font-mono text-[8px] tracking-[0.8em] uppercase text-accent/20 italic">
-              Minimalist Digital Craft
-            </span>
+            
           </div>
         </div>
 

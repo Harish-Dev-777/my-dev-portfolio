@@ -188,7 +188,7 @@ const ProjectRow = ({
           </div>
 
           {/* Col 4: Arrow */}
-          <div className="col-span-12 md:col-span-2 flex justify-end absolute sm:relative right-4 sm:right-0 top-8 sm:top-0">
+          <div className="col-span-12 md:col-span-2 flex justify-end">
             <motion.div
               animate={{
                 opacity: hovered ? 1 : 0.3,
